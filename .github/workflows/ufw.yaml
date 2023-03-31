@@ -13,4 +13,4 @@ jobs:
       run: sudo apt-get install bats
 
     - name: Run tests
-      run: ./tests/ufw-setup-test.sh
+      run: sudo bats tests/ufw-setup-test.sh
