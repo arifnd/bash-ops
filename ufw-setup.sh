@@ -25,7 +25,9 @@ echo "Enter open ports separated by commas (e.g. 80,443,22): "
 read open_ports
 
 # Allow incoming traffic on specified ports
-ufw allow in on any port {${open_ports//,/ }}
+for port in ${open_ports//,/ } ; do
+    ufw allow $port
+done
 
 # Enable UFW
 ufw enable
