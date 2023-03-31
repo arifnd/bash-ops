@@ -1,3 +1,5 @@
+![bash-ops](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+
 # Bash Ops
 
 `bash-ops` is a simple collection of Bash scripts that aims to help simplify the process of deploying and managing servers and VPS instances. These scripts are meant to be used as a starting point for building custom deployment pipelines that are tailored to your specific needs.
