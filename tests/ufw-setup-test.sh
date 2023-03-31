@@ -1,12 +1,20 @@
 #!/usr/bin/env bats
 
 @test "Check if script installs UFW on Debian-based systems" {
+  if [[ $(uname -a) == *"Red Hat"* ]]; then
+    skip 'Debian-based systems'
+  fi
+
   run bash ufw_install.sh
   [[ $(uname -a) == *"Debian"* ]]
   [[ $(ufw status | grep -o "Status: active") == "Status: active" ]]
 }
 
 @test "Check if script installs UFW on Red Hat-based systems" {
+  if [[ $(uname -a) == *"Debian"* ]]; then
+    skip 'Red Hat-based systems'
+  fi
+
   run bash ufw_install.sh
   [[ $(uname -a) == *"Red Hat"* ]]
   [[ $(ufw status | grep -o "Status: active") == "Status: active" ]]
